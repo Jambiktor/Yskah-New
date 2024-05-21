@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\index-product.css">
+    <link rel="stylesheet" href="css\index-products.css">
 </head>
 
 <body>
@@ -46,12 +46,12 @@
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body">
-                <ul class="navbar-nav nav-fill gap-2 p-0">
+                <ul class="navbar-nav nav-fill gap-2 p-0" id="navbarNav">
                     <li class="nav-item">
-                        <a class="nav-link text-dark active" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link text-dark" href="index.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="index-products.php">Product</a>
+                        <a class="nav-link text-dark active" aria-current="page" href="index-products.php">Product</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
@@ -60,33 +60,37 @@
             </div>
         </div>
 
-        <a id="img" class="navbar-brand" href="#">
-            <img src="img\LOGOO.png" alt="YsakaLogo" class=" d-lg-inline-block float-start d-none" style="width: 110px">
-        </a>
-
-        <div class="container navbar-collapse d-flex d-md-none" id="navbarNav">
-            <ul class="navbar-nav nav-fill gap-2 p-0">
-                <li class="nav-item">
-                    <a class="nav-link text-dark active" aria-current="page" href="index.php">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="index-products.php">Product</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">About Us</a>
-                </li>
-            </ul>
-        </div>
-
         <div
-            class="d-flex flex-row d-md-none d-lg-flex align-items-center justify-content-center justify-content-md-end  me-2">
-            <div id="login-link" class="me-0 me-md-2 ">
-                <a href="login_form.php" class="" style="text-decoration: none; color: black">
-                    <p class="mb-0">Log in</p>
-                </a>
+            class="container-fluid ms-0 ms-md-3 d-none d-md-flex align-items-center justify-content-space justify-content-md-between">
+            <a id=" img" class="navbar-brand" href="#">
+                <img src="img\LOGOO.png" alt="YsakaLogo" class=" d-lg-inline-block float-start d-none"
+                    style="width: 110px">
+            </a>
+
+            <div class="container navbar-collapse d-flex d-md-none" id="navbarNav">
+                <ul class="navbar-nav nav-fill gap-2 p-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark " href="index.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark active" aria-current="page" href="index-products.php">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">About Us</a>
+                    </li>
+                </ul>
             </div>
-            <div class="">
-                <img src="img\default-profile.jpg" alt="profile" class="" style="width: 50px">
+
+            <div
+                class="d-flex flex-row d-md-none d-lg-flex align-items-center justify-content-center justify-content-md-end  me-2">
+                <div id="login-link" class="me-0 me-md-2 ">
+                    <a href="login_form.php" class="" style="text-decoration: none; color: black">
+                        <p class="mb-0">Log in</p>
+                    </a>
+                </div>
+                <div class="">
+                    <img src="img\default-profile.jpg" alt="profile" class="" style="width: 50px">
+                </div>
             </div>
         </div>
     </nav>

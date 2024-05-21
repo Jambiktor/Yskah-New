@@ -17,7 +17,7 @@ body > div.navi-bar > div > div.btn-group > button {
   width: 180px;
 }
 
-#navbarNav > ul > li > a.active {
+.nav-link > ul > li > a.active {
   border-bottom: 2px solid black;
 }
 
