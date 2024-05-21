@@ -25,6 +25,7 @@ body > div.navi-bar > div > div.btn-group > button {
   background: rgb(255, 255, 0);
   padding: 8px 28px 8px 28px;
   border-radius: 7px;
+  width: 100px;
 }
 
 #navbarNav > ul > li > a.active {

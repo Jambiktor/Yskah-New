@@ -34,6 +34,10 @@ body {
 }
 
 /* droptdown on user */
+.right_nav {
+  display: flex;
+}
+
 body > nav > div > div.right_nav > div.btn-group > button {
   background: transparent;
   border: none;
@@ -41,12 +45,15 @@ body > nav > div > div.right_nav > div.btn-group > button {
   padding: 0;
   padding-top: 5px;
 }
+
 body > nav > div > div.right_nav > div.btn-group > button:focus {
   box-shadow: none;
 }
+
 body > nav > div > div.right_nav > button:focus {
   box-shadow: none;
 }
+
 #login-link {
   background: var(--main_color);
   padding: 8px 28px 8px 28px;
