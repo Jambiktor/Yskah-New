@@ -1,6 +1,7 @@
 :root {
   --main_color: rgb(255, 238, 0);
   --sec_color: rgb(255, 237, 80);
+  --body_color: rgb(235, 235, 235);
 }
 
 * {
@@ -9,17 +10,20 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background-color: rgb(70, 70, 70);
+  background: rgb(233, 0, 0);
 }
+
 #navbarNav {
   align-items: center;
   justify-content: space-evenly;
   flex-direction: column;
 }
+
 #Intro {
   height: 60dvh;
   width: 100dvw;
@@ -33,6 +37,10 @@ body {
   );
 }
 
+body > nav > div {
+  height: 100%;
+}
+
 /* droptdown on user */
 .right_nav {
   display: flex;
@@ -40,10 +48,11 @@ body {
 
 body > nav > div > div.right_nav > div.btn-group > button {
   background: transparent;
+  margin-right: 0;
   border: none;
   height: 70px;
   padding: 0;
-  padding-top: 5px;
+  padding-top: 7px;
 }
 
 body > nav > div > div.right_nav > div.btn-group > button:focus {
@@ -69,7 +78,7 @@ body > nav > div > div.right_nav > button:focus {
 }
 
 .user {
-  height: 65px;
+  height: 55px;
   width: 180px;
   background: var(--main_color);
   margin-right: 10px;
@@ -166,9 +175,56 @@ body
   height: 35px;
   font-size: 15px;
 }
+
 .btn-group {
   margin-right: 10px;
 }
+
+a {
+  text-decoration: none;
+}
+
+.notification_section {
+  width: 100%;
+  background: rgb(237, 237, 237);
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.notification_section a {
+  text-decoration: none;
+}
+.notif_title {
+  width: 100%;
+  height: 30px;
+  /* background: rgb(192, 192, 192); */
+  border-bottom: 2px solid rgb(200, 200, 200);
+}
+.notif_title p {
+  font-size: 20px;
+  color: black;
+}
+.notif_message {
+  margin-top: 10px;
+  width: 100%;
+  /* background: rgb(192, 192, 192); */
+}
+.notif_message p {
+  font-size: 15px;
+  color: rgb(103, 102, 102);
+}
+.notif_details {
+  width: 100%;
+  /* background: rgb(192, 192, 192); */
+  margin-bottom: 0;
+}
+.notif_details p {
+  font-size: 13px;
+  color: gray;
+}
+
 footer {
   width: 100%;
   height: 300px;
@@ -294,4 +350,79 @@ footer {
   margin-top: 5px;
   color: gray;
   font-size: 30px;
+}
+
+@media only screen and (max-width: 320px) {
+  #login-link {
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #login-link p {
+    font-size: 14px;
+  }
+
+  #carouselExampleInterval {
+    margin-top: 0px;
+    margin-left: -250px;
+  }
+
+  #introText {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer_content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer_logo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #footer-logo {
+    width: 30%;
+    height: auto;
+  }
+
+  .footer_details {
+    padding-top: 5px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .socials {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .copyright {
+    margin-top: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .copyright p {
+    font-size: 8px;
+  }
 }

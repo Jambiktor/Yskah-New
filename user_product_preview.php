@@ -10,11 +10,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\admin_product_preview1.css" />
+    <link rel="stylesheet" href="css\admin_product_preview.css" />
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-0 p-0">
         <div
             class="container-fluid ms-0 ms-md-3 d-flex align-items-center justify-content-space justify-content-md-between d-lg-none">
             <a class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
@@ -68,10 +68,10 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav nav-fill gap-2 p-0">
                     <li class="nav-item">
-                        <a class="nav-link text-dark active" aria-current="page" href="user_products.php">Home</a>
+                        <a class="nav-link text-dark" href="user_products.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="user_product_preview.php">Product</a>
+                        <a class="nav-link text-dark active" aria-current="page" href="user_products.php">Product</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
@@ -90,10 +90,10 @@
             <div class="container navbar-collapse d-flex d-md-none" id="navbarNav">
                 <ul class="navbar-nav nav-fill gap-2 p-0">
                     <li class="nav-item">
-                        <a class="nav-link text-dark active" aria-current="page" href="user_landing_page.php">Home</a>
+                        <a class="nav-link text-dark" href="user_landing_page.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="user_products.php">Product</a>
+                        <a class="nav-link text-dark active " aria-current="page" href="user_products.php">Product</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
@@ -126,7 +126,57 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        ...
+                        <div class="notification_section">
+                            <a href="#">
+                                <div class="notif_container">
+                                    <div class="notif_title">
+                                        <p>Notification Title</p>
+                                    </div>
+                                    <div class="notif_message">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.
+                                        </p>
+
+                                    </div>
+                                    <div class="notif_details">
+                                        <p>Product name x 00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notification_section">
+                            <a href="#">
+                                <div class="notif_container">
+                                    <div class="notif_title">
+                                        <p>Notification Title</p>
+                                    </div>
+                                    <div class="notif_message">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.
+                                        </p>
+
+                                    </div>
+                                    <div class="notif_details">
+                                        <p>Product name x 00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notification_section">
+                            <a href="#">
+                                <div class="notif_container">
+                                    <div class="notif_title">
+                                        <p>Notification Title</p>
+                                    </div>
+                                    <div class="notif_message">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.
+                                        </p>
+
+                                    </div>
+                                    <div class="notif_details">
+                                        <p>Product name x 00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -165,8 +215,8 @@
     </nav>
 
     <div id="container" class="container-fluid d-flex mb-3 mt-3">
-        <div class="row  row-cols-1 row-cols-md-2 gx-1 gy-4 gy-md-0">
-            <div class="col h-50">
+        <div class="row row-cols-1 row-cols-md-2 gx-1 gy-4 gy-md-0 bg-light">
+            <div class="col">
                 <div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="3000">
@@ -309,7 +359,7 @@
     </div>
 
     <footer>
-        <div class="footer_content">
+        <div class="footer_content  flex-md-nowrap">
             <div class="footer_logo">
                 <img id="footer-logo" src="img\LOGO.png" alt="">
             </div>

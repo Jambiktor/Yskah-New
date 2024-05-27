@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-0 p-0">
         <div
             class="container-fluid ms-0 ms-md-3 d-flex align-items-center justify-content-space justify-content-md-between d-lg-none">
             <a class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
@@ -127,7 +127,57 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        ...
+                        <div class="notification_section">
+                            <a href="#">
+                                <div class="notif_container">
+                                    <div class="notif_title">
+                                        <p>Notification Title</p>
+                                    </div>
+                                    <div class="notif_message">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.
+                                        </p>
+
+                                    </div>
+                                    <div class="notif_details">
+                                        <p>Product name x 00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notification_section">
+                            <a href="#">
+                                <div class="notif_container">
+                                    <div class="notif_title">
+                                        <p>Notification Title</p>
+                                    </div>
+                                    <div class="notif_message">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.
+                                        </p>
+
+                                    </div>
+                                    <div class="notif_details">
+                                        <p>Product name x 00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notification_section">
+                            <a href="#">
+                                <div class="notif_container">
+                                    <div class="notif_title">
+                                        <p>Notification Title</p>
+                                    </div>
+                                    <div class="notif_message">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.
+                                        </p>
+
+                                    </div>
+                                    <div class="notif_details">
+                                        <p>Product name x 00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -165,8 +215,6 @@
         </div>
     </nav>
 
-
-
     <div class="container-fluid d-flex align-items-end justify-content-center flex-column position-absolute pe-2 gap-3 pb-0 pe-lg-5 "
         id="Intro">
         <div class="d-flex flex-column align-items-end text-end">
@@ -199,7 +247,6 @@
         </div>
     </div>
 
-
     <div class="container-fluid">
         <h3 class="pt-4 ps-4">Hot Products</h3>
         <div class="row row-cols-1 row-cols-md-4 m-1 mt-4 mb-4">
@@ -224,7 +271,7 @@
     </div>
 
     <footer>
-        <div class="footer_content">
+        <div class="footer_content flex-wrap flex-md-nowrap">
             <div class="footer_logo">
                 <img id="footer-logo" src="img\LOGO.png" alt="">
             </div>

@@ -11,11 +11,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\products.css">
+    <link rel="stylesheet" href="css\product.css">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-0 p-0">
         <div
             class="container-fluid ms-0 ms-md-3 d-flex align-items-center justify-content-space justify-content-md-between d-lg-none">
             <a class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
@@ -69,7 +69,7 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav nav-fill gap-2 p-0">
                     <li class="nav-item">
-                        <a class="nav-link text-dark " href="user_products.php">Home</a>
+                        <a class="nav-link text-dark " href="user_landing_page.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark active" aria-current="page"
@@ -128,7 +128,59 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        ...
+                        <div class="offcanvas-body">
+                            <div class="notification_section">
+                                <a href="#">
+                                    <div class="notif_container">
+                                        <div class="notif_title">
+                                            <p>Notification Title</p>
+                                        </div>
+                                        <div class="notif_message">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis,
+                                                sequi.</p>
+
+                                        </div>
+                                        <div class="notif_details">
+                                            <p>Product name x 00</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="notification_section">
+                                <a href="#">
+                                    <div class="notif_container">
+                                        <div class="notif_title">
+                                            <p>Notification Title</p>
+                                        </div>
+                                        <div class="notif_message">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis,
+                                                sequi.</p>
+
+                                        </div>
+                                        <div class="notif_details">
+                                            <p>Product name x 00</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="notification_section">
+                                <a href="#">
+                                    <div class="notif_container">
+                                        <div class="notif_title">
+                                            <p>Notification Title</p>
+                                        </div>
+                                        <div class="notif_message">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis,
+                                                sequi.</p>
+
+                                        </div>
+                                        <div class="notif_details">
+                                            <p>Product name x 00</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -189,7 +241,7 @@
     </div>
 
     <footer>
-        <div class="footer_content">
+        <div class="footer_content flex-wrap flex-md-nowrap">
             <div class="footer_logo">
                 <img src="img\LOGO.png" alt="">
             </div>
