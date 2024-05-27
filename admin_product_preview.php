@@ -10,36 +10,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\admin_product_preview1.css" />
+    <link rel="stylesheet" href="css\admin_product_preview.css" />
 
 </head>
 
 <body>
-
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light m-0 p-0">
         <div
-            class="container-fluid ms-0 ms-md-3 d-flex align-items-center justify-content-center justify-content-md-between">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            class="container-fluid ms-0 ms-md-3 d-flex align-items-center justify-content-space justify-content-md-between d-lg-none">
+            <a class="btn btn-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                aria-controls="offcanvasExample">
                 <span class="navbar-toggler-icon" style="width:15px"></span>
-            </button>
+            </a>
 
             <a id="img" class="navbar-brand" href="#">
                 <img src="img\LOGOO.png" alt="YsakaLogo" class="d-inline-block float-start" style="width: 110px">
             </a>
+        </div>
 
-            <div class="d-flex align-items-center justify-content-center justify-content-md-end d-lg-none">
-                <div class="d-none d-md-block">
-                    <a href="login_form.php" class="">
+        <div class="offcanvas offcanvas-start " tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <div id="offcanvasExampleLabel"
+                    class="offcanvas-title d-flex flex-row align-items-center justify-content-center justify-content-md-end  me-2">
+                    <div class="btn-group">
+                        <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <div class="user">
 
-                    </a>
+                                <div class="name">
+                                    <p><?php echo $_SESSION['username'] ?></p>
+                                </div>
+
+                                <div class="photo">
+                                    <img src="img\default-profile.jpg" alt="">
+                                </div>
+
+                            </div>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="drop_items">
+                                    <a href="user_setting.php">Account</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="drop_items">
+                                    <form action="logout.php" method="post">
+                                        <button type="submit" name="logout" class="btn btn-danger">Log out</button>
+                                    </form>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="d-none d-md-block">
-                    <img src="img\default-profile.jpg" alt="profile" class="" style="width: 50px">
-                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav nav-fill gap-2 p-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="admin.php">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark active" aria-current="page" href="admin-products.php">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="#">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
+        <div
+            class="container-fluid ms-0 ms-md-3 d-none d-md-flex align-items-center justify-content-space justify-content-md-between">
+            <a id=" img" class="navbar-brand" href="#">
+                <img src="img\LOGOO.png" alt="YsakaLogo" class=" d-lg-inline-block float-start d-none"
+                    style="width: 110px">
+            </a>
+
+            <div class="container navbar-collapse d-flex d-md-none" id="navbarNav">
                 <ul class="navbar-nav nav-fill gap-2 p-0">
                     <li class="nav-item">
                         <a class="nav-link text-dark " href="admin.php">Home</a>
@@ -53,7 +102,7 @@
                 </ul>
             </div>
 
-            <div class="right_nav">
+            <div class="right_nav d-none d-lg-flex">
                 <!-- for Notifications -->
                 <!-- <button button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Notifications"> -->
                 <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
@@ -78,7 +127,57 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        ...
+                        <div class="notification_section">
+                            <a href="#">
+                                <div class="notif_container">
+                                    <div class="notif_title">
+                                        <p>Notification Title</p>
+                                    </div>
+                                    <div class="notif_message">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.
+                                        </p>
+
+                                    </div>
+                                    <div class="notif_details">
+                                        <p>Product name x 00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notification_section">
+                            <a href="#">
+                                <div class="notif_container">
+                                    <div class="notif_title">
+                                        <p>Notification Title</p>
+                                    </div>
+                                    <div class="notif_message">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.
+                                        </p>
+
+                                    </div>
+                                    <div class="notif_details">
+                                        <p>Product name x 00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="notification_section">
+                            <a href="#">
+                                <div class="notif_container">
+                                    <div class="notif_title">
+                                        <p>Notification Title</p>
+                                    </div>
+                                    <div class="notif_message">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis, sequi.
+                                        </p>
+
+                                    </div>
+                                    <div class="notif_details">
+                                        <p>Product name x 00</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -261,7 +360,7 @@
     </div>
 
     <footer>
-        <div class="footer_content flex-wrap">
+        <div class="footer_content flex-wrap flex-lg-nowrap">
             <div class="footer_logo">
                 <img src="img\LOGO.png" alt="">
             </div>
