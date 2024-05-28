@@ -93,137 +93,61 @@
         </div>
     </nav>
 
+    <?php
+        if (isset($_GET['id'])) {
+        $product_id = intval($_GET['id']); // Get the product ID from the query parameter and sanitize it
+
+        $res = mysqli_query($conn, "SELECT * FROM products WHERE id = $product_id");
+        $row = mysqli_fetch_assoc($res);
+
+        if ($row) {
+    ?>
+
     <div id="container" class="container-fluid d-flex mb-3 mt-3">
-        <div class="row  row-cols-1 row-cols-md-2 gx-1 gy-4 gy-md-0">
-            <div class="col h-50">
-                <div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel">
+        <div class="row row-cols-1 row-cols-md-2 gx-1 gy-4 gy-md-0">
+            <div class="col">
+                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-interval="false">
                     <div class="carousel-inner">
-                        <div class="carousel-item active" data-bs-interval="3000">
-                            <img src="img\homepic1.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-item active">
+                            <img src="product-images/<?php echo $row['image_file']?>" class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="img\homepic2.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-item">
+                            <img src="product-images/<?php echo $row['image_file']?>" class="d-block w-100" alt="...">
                         </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="img\homepic3.jpg" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item" data-bs-interval="3000">
-                            <img src="img\homepic4.jpg" class="d-block w-100" alt="...">
+                        <div class="carousel-item">
+                            <img src="product-images/<?php echo $row['image_file']?>" class="d-block w-100" alt="...">
                         </div>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
                 </div>
             </div>
 
             <div class="col">
                 <div class="container-fluid">
-                    <div class="product_name_price d-flex justify-content-between p-3 align-items-center ">
-                        <h1>Product Name</h1>
-                        <h3>Php 000 - 000</h3>
+                    <div class="product_name_price d-flex justify-content-between p-3 align-items-center">
+                        <h1><?php echo $row['product_name']?></h1>
+                        <h3>Php <?php echo $row['price']?>.00</h3>
                     </div>
                     <div class="product_description w-100 h-auto">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia velit est commodi architecto
-                        labore
-                        natus perspiciatis hic iure odio ut! Quos maiores vero laudantium ex, quasi repellat cum
-                        voluptatum
-                        veritatis.
+                        labore natus perspiciatis hic iure odio ut! Quos maiores vero laudantium ex, quasi repellat cum
+                        voluptatum veritatis.
                     </div>
                     <div class="variation_ordernow d-flex flex-column w-100">
                         <div
                             class="product_variation w-100 d-flex align-items-center flex-wrap justify-content-center justify-content-md-start gap-2 mt-md-5">
-                            <!-- Button trigger modal -->
-                            <div class="variation  ">
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    Variation
-                                </button>
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                ...
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn">Save changes</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <!-- Variation Buttons -->
+                            <div class="variation">
+                                <button type="button" class="btn variation-btn">Variation 1</button>
                             </div>
                             <div class="variation">
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    variation
-                                </button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                ...
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn">Save changes</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn variation-btn">Variation 2</button>
                             </div>
                             <div class="variation">
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                    variation
-                                </button>
-
-                                <!-- Modal -->
-                                <div class="modal fade" id="exampleModal" tabindex="-1"
-                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                    aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                ...
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn">Save changes</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <button type="button" class="btn variation-btn">Variation 3</button>
                             </div>
                         </div>
                         <div
-                            class="product_ordernow_addtocart  d-flex align-items-center justify-content-md-start  justify-content-center gap-3">
+                            class="product_ordernow_addtocart d-flex align-items-center justify-content-md-start justify-content-center gap-3">
                             <div class="add_to_cart">
                                 <h4>Add to Cart</h4>
                             </div>
@@ -236,6 +160,25 @@
             </div>
         </div>
     </div>
+
+    <script>
+    document.querySelectorAll('.variation-btn').forEach((button, index) => {
+        button.addEventListener('click', function() {
+            const carousel = document.querySelector('#carouselExampleInterval');
+            const bootstrapCarousel = new bootstrap.Carousel(carousel);
+            bootstrapCarousel.to(index + 1);
+        });
+    });
+    </script>
+
+    <?php
+        } else {
+            echo "<p>Product not found.</p>";
+        }
+    } else {
+        echo "<p>No product selected.</p>";
+    }
+    ?>
 
     <footer>
         <div class="footer_content  flex-wrap flex-md-nowrap">

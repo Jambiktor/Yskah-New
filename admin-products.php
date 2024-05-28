@@ -215,43 +215,25 @@
     </nav>
 
     <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-4 d-flex flex-row m-1 mt-4 mb-4 gy-2">
+        <div class="row row-cols-1 row-cols-md-4 d-flex flex-row m-1 mt-4 mb-4">
             <?php 
-                $res = mysqli_query($conn, "SELECT * FROM products");
-                while($row = mysqli_fetch_assoc($res)){
-            ?>
-            <div class="col-sm-6 col-lg-3">
+        $res = mysqli_query($conn, "SELECT * FROM products");
+        while($row = mysqli_fetch_assoc($res)){
+        ?>
+            <div class="col-sm-6 col-lg-4">
                 <div class="card w-100">
-                    <img src="product-images/<?php echo $row['image_file']?>" class="card-img-top" alt="..." />
-                    <div class="remove_button">
-                        <form action="delete-product.php" method="POST"
-                            onsubmit="return confirm('Are you sure you want to remove this product?');">
-                            <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                            <button type="submit" name="remove">Remove</button>
-                        </form>
-                    </div>
-
+                    <img src="product-images/<?php echo $row['image_file']?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $row['product_name']?></h5>
                         <p class="card-text">
                         <p>Php <?php echo $row['price']?>.00</p>
                         </p>
-                        <a href="admin_product_preview.php" class="btn btn-primary">View Product</a>
+                        <a href="admin_product_preview.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View
+                            Product</a>
                     </div>
                 </div>
             </div>
-
             <?php }?>
-            <div class="col-sm-6 col-lg-3">
-                <div class="card w-100 text-center align-items-center justify-content-center d-flex">
-                    <div class="add_button w-75 pt-2">
-                        <a href="admin-adding-products-form.php">
-                            <img src="img\Add_Button.png" class="card-img-top" alt="..." />
-                            <h3>Add Product</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 

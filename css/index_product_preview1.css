@@ -1,3 +1,5 @@
+@import url("head.php");
+
 * {
   margin: 0;
   padding: 0;
@@ -42,23 +44,13 @@ body > div.navi-bar > div > div.btn-group > button {
   flex-direction: column;
 }
 
-body
-  > nav
-  > div
-  > div.d-lg-flex.align-items-center.justify-content-center.justify-content-md-end.d-md-none.me-2
-  > div:nth-child(2)
-  > img {
-  width: 50px;
-  border-radius: 50%;
-}
-
 #container {
   width: 90%;
   height: 100vh;
 }
 
 #carouselExampleInterval {
-  width: clamp(300px, 100%, 1200px);
+  width: clamp(200px, 100%, 1200px);
 }
 
 #container .product_name_price {
@@ -233,10 +225,6 @@ footer {
   .add_to_cart {
     border-radius: 20px;
     height: 35px;
-  }
-
-  #container {
-    width: 100%;
   }
 
   footer {

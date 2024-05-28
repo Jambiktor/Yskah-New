@@ -248,12 +248,12 @@
     </div>
 
     <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 m-1 mt-4 mb-4">
+        <div class="row row-cols-1 row-cols-md-4 d-flex flex-row m-1 mt-4 mb-4">
             <?php 
-            $res = mysqli_query($conn, "SELECT * FROM products");
-            while($row = mysqli_fetch_assoc($res)){
+        $res = mysqli_query($conn, "SELECT * FROM products");
+        while($row = mysqli_fetch_assoc($res)){
         ?>
-            <div class="col">
+            <div class="col-sm-6 col-lg-4">
                 <div class="card w-100">
                     <img src="product-images/<?php echo $row['image_file']?>" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -261,7 +261,8 @@
                         <p class="card-text">
                         <p>Php <?php echo $row['price']?>.00</p>
                         </p>
-                        <a href="user_product_preview.php" class="btn btn-primary">View Product</a>
+                        <a href="user_product_preview.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View
+                            Product</a>
                     </div>
                 </div>
             </div>

@@ -98,8 +98,8 @@
     <div class="container-fluid">
         <div class="row row-cols-1 row-cols-md-4 d-flex flex-row m-1 mt-4 mb-4">
             <?php 
-            $res = mysqli_query($conn, "SELECT * FROM products");
-            while($row = mysqli_fetch_assoc($res)){
+        $res = mysqli_query($conn, "SELECT * FROM products");
+        while($row = mysqli_fetch_assoc($res)){
         ?>
             <div class="col-sm-6 col-lg-4">
                 <div class="card w-100">
@@ -109,13 +109,15 @@
                         <p class="card-text">
                         <p>Php <?php echo $row['price']?>.00</p>
                         </p>
-                        <a href="index_product_preview.php" class="btn btn-primary">View Product</a>
+                        <a href="index_product_preview.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View
+                            Product</a>
                     </div>
                 </div>
             </div>
             <?php }?>
         </div>
     </div>
+
 
     <footer>
         <div class="footer_content  flex-wrap flex-md-nowrap">

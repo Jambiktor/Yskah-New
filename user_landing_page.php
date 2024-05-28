@@ -262,7 +262,8 @@
                         <p class="card-text">
                         <p>Php <?php echo $row['price']?>.00</p>
                         </p>
-                        <a href="index_product_preview.php" class="btn btn-primary">View Product</a>
+                        <a href="user_product_preview.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View
+                            Product</a>
                     </div>
                 </div>
             </div>
