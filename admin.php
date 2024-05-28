@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\landing_page.css">
+    <link rel="stylesheet" href="css\landing_page1.css">
 </head>
 
 <body>
@@ -219,7 +219,7 @@
         id="Intro">
         <div class="d-flex flex-column align-items-end text-end">
             <h1>Introduction</h1>
-            <h5 id="introText" class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus eveniet dolore
+            <h5 id="introText" class="w">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus eveniet dolore
                 excepturi
                 incidunt,
                 amet
@@ -248,7 +248,7 @@
     </div>
 
     <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-4 m-1 mt-4 mb-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 m-1 mt-4 mb-4">
             <?php 
             $res = mysqli_query($conn, "SELECT * FROM products");
             while($row = mysqli_fetch_assoc($res)){
@@ -270,7 +270,7 @@
     </div>
 
     <footer>
-        <div class="footer_content flex-wrap flex-lg-nowrap">
+        <div class="footer_content flex-wrap flex-md-nowrap">
             <div class="footer_logo">
                 <img id="footer-logo" src="img\LOGO.png" alt="">
             </div>

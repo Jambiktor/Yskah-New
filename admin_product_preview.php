@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\admin_product_preview.css" />
+    <link rel="stylesheet" href="css\admin_product_preview1.css" />
 
 </head>
 
@@ -215,9 +215,9 @@
         </div>
     </nav>
 
-    <div id="container" class="container-fluid d-flex mb-3 mt-3">
-        <div class="row  row-cols-1 row-cols-md-2 gx-1 gy-4 gy-md-0">
-            <div class="col h-50">
+    <div id="container" class="container-fluid d-flex mb-3 mt-3 ">
+        <div class="row row-cols-1 row-cols-md-2 gx-1 gy-4 gy-md-0">
+            <div class="col">
                 <div id="carouselExampleInterval" class="carousel slide " data-bs-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active" data-bs-interval="3000">
@@ -246,7 +246,7 @@
                 </div>
             </div>
 
-            <div class="col">
+            <div class="col ">
                 <div class="container-fluid">
                     <div class="product_name_price d-flex justify-content-between p-3 align-items-center ">
                         <h1>Product Name</h1>
@@ -360,9 +360,9 @@
     </div>
 
     <footer>
-        <div class="footer_content flex-wrap flex-lg-nowrap">
+        <div class="footer_content flex-wrap flex-md-nowrap">
             <div class="footer_logo">
-                <img src="img\LOGO.png" alt="">
+                <img id="footer-logo" src="img\LOGO.png" alt="">
             </div>
             <div class="footer_details">
                 <h4>SOCIALS</h4>
@@ -382,7 +382,6 @@
                 </div>
             </div>
         </div>
-
     </footer>
 </body>
 

@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\product.css">
+    <link rel="stylesheet" href="css\product1.css">
 </head>
 
 <body>
@@ -241,9 +241,9 @@
     </div>
 
     <footer>
-        <div class="footer_content flex-wrap flex-md-nowrap">
+        <div class="footer_content  flex-wrap flex-md-nowrap">
             <div class="footer_logo">
-                <img src="img\LOGO.png" alt="">
+                <img id="footer-logo" src="img\LOGO.png" alt="">
             </div>
             <div class="footer_details">
                 <h4>SOCIALS</h4>
@@ -263,7 +263,6 @@
                 </div>
             </div>
         </div>
-
     </footer>
 </body>
 

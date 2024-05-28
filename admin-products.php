@@ -243,8 +243,8 @@
 
             <?php }?>
             <div class="col-sm-6 col-lg-3">
-                <div class="card w-100">
-                    <div class="add_button">
+                <div class="card w-100 text-center align-items-center justify-content-center d-flex">
+                    <div class="add_button w-75 pt-2">
                         <a href="admin-adding-products-form.php">
                             <img src="img\Add_Button.png" class="card-img-top" alt="..." />
                             <h3>Add Product</h3>
@@ -256,7 +256,7 @@
     </div>
 
     <footer>
-        <div class="footer_content flex-wrap flex-lg-nowrap">
+        <div class="footer_content flex-wrap flex-md-nowrap">
             <div class="footer_logo">
                 <img id="footer-logo" src="img\LOGO.png" alt="">
             </div>

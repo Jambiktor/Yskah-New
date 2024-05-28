@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\landing_page.css">
+    <link rel="stylesheet" href="css\landing_page1.css">
 </head>
 
 <body>
@@ -249,7 +249,7 @@
 
     <div class="container-fluid">
         <h3 class="pt-4 ps-4">Hot Products</h3>
-        <div class="row row-cols-1 row-cols-md-4 m-1 mt-4 mb-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 m-1 mt-4 mb-4">
             <?php 
             $res = mysqli_query($conn, "SELECT * FROM products");
             while($row = mysqli_fetch_assoc($res)){
