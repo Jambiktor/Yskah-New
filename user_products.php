@@ -132,6 +132,11 @@
                             </li>
                             <li>
                                 <div class="drop_items">
+                                    <a href="user_setting.php">Orders</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="drop_items">
                                     <form action="logout.php" method="post">
                                         <button type="submit" name="logout" class="btn btn-danger">Log out</button>
                                     </form>
@@ -149,6 +154,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark active" aria-current="page" href="user_products.php">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="user_cart.php">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
@@ -172,6 +180,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark active" aria-current="page"
                             href="user_landing_page.php">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="user_cart.php">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
@@ -275,6 +286,11 @@
                         </li>
                         <li>
                             <div class="drop_items">
+                                <a href="user_setting.php">Orders</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="drop_items">
                                 <form action="logout.php" method="post">
                                     <button type="submit" name="logout" class="btn btn-danger">Log out</button>
                                 </form>
@@ -286,8 +302,8 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
-        <div class="row row-cols-1 row-cols-md-4 d-flex flex-row m-1 mt-4 mb-4">
+    <div class="container-fluid-md container-lg rounded mt-3 p-3 bg-light">
+        <div class="row row-cols-1 row-cols-md-4 d-flex flex-row m-1 mt-4 mb-4 gy-2">
             <?php 
         $res = mysqli_query($conn, "SELECT * FROM products");
         while($row = mysqli_fetch_assoc($res)){
@@ -295,10 +311,10 @@
             <div class="col-sm-6 col-lg-4">
                 <div class="card w-100">
                     <img src="product-images/<?php echo $row['image_file']?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['product_name']?></h5>
-                        <p class="card-text">
-                        <p>Php <?php echo $row['price']?>.00</p>
+                    <div class="card-body p-0 ps-2 pb-2">
+                        <h4 class="card-title m-0 mt-2"><?php echo $row['product_name']?></h4>
+                        <p class="card-text m-0">
+                        <p class="m-0 ms-2 text-secondary">₱ <?php echo $row['price']?>.00</p>
                         </p>
                         <a href="user_product_preview.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View
                             Product</a>

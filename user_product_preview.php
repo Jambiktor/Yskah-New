@@ -150,6 +150,9 @@
                         <a class="nav-link text-dark active" aria-current="page" href="user_products.php">Product</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-dark" href="user_cart.php">Cart</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
                     </li>
                 </ul>
@@ -171,6 +174,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark active" aria-current="page"
                             href="user_landing_page.php">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" href="user_cart.php">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>

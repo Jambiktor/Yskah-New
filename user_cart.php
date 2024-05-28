@@ -3,7 +3,6 @@
     include("connection.php");
     include("head.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\landing_page1.css">
+    <link rel="stylesheet" href="css\cart6.css" />
 </head>
 
 <body>
@@ -132,11 +131,6 @@
                             </li>
                             <li>
                                 <div class="drop_items">
-                                    <a href="user_setting.php">Orders</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="drop_items">
                                     <form action="logout.php" method="post">
                                         <button type="submit" name="logout" class="btn btn-danger">Log out</button>
                                     </form>
@@ -150,13 +144,13 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav nav-fill gap-2 p-0">
                     <li class="nav-item">
-                        <a class="nav-link text-dark active" aria-current="page" href="user_landing_page.php">Home</a>
+                        <a class="nav-link text-dark " href=" user_landing_page.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="user_products.php">Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="user_cart.php">Cart</a>
+                        <a class="nav-link text-dark  active" aria-current="page" href="user_cart.php">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
@@ -175,13 +169,13 @@
             <div class="container navbar-collapse d-flex d-md-none" id="navbarNav">
                 <ul class="navbar-nav nav-fill gap-2 p-0">
                     <li class="nav-item">
-                        <a class="nav-link text-dark active" aria-current="page" href="user_landing_page.php">Home</a>
+                        <a class="nav-link text-dark" href="user_landing_page.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="user_products.php">Product</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="user_cart.php">Cart</a>
+                        <a class="nav-link text-dark active" aria-current="page" href="user_cart.php">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
@@ -285,11 +279,6 @@
                         </li>
                         <li>
                             <div class="drop_items">
-                                <a href="user_setting.php">Orders</a>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="drop_items">
                                 <form action="logout.php" method="post">
                                     <button type="submit" name="logout" class="btn btn-danger">Log out</button>
                                 </form>
@@ -301,60 +290,48 @@
         </div>
     </nav>
 
-    <div class="container-fluid d-flex align-items-end justify-content-center flex-column position-absolute pe-2 gap-3 pb-0 pe-lg-5 "
-        id="Intro">
-        <div class="d-flex flex-column align-items-end text-end">
-            <h1>Introduction</h1>
-            <h5 id="introText" class="">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minus eveniet dolore
-                excepturi
-                incidunt,
-                amet
-                quasi fugit animi perspiciatis quisquam molestias.</h5>
-        </div>
-        <a href="index-products.php"><button type="button" class="btn btn-lg btn-light p-3 w-100">Order Now</button></a>
-    </div>
+    <div id="container" class="container-fluid-sm container-md d-flex flex-column mb-3 mt-3 p-3">
 
-    <div class="overflow-hidden d-flex justify-content-center" style=" height: 60dvh">
-        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active " data-bs-interval="3000">
-                    <img src="img\homepic1.jpg" class="d-block w-100 img-fluid" alt="...">
+        <div id="select_all" class="container rounded p-2 mb-2 ps-2 d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center ps-2">
+                <input type="checkbox">
+                <p class="ms-2 mt-3">Select All</p>
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="me-3 d-flex flex-column align-items-end justify-content-start ">
+                    <p class="m-0 ">Total</p>
+                    <h5 id="price" class="m-0 ">₱ 00.00</h5>
                 </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="img\homepic2.jpg" class="d-block w-100  img-fluid" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="img\homepic3.jpg" class="d-block w-100  img-fluid" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="3000">
-                    <img src="img\homepic4.jpg" class="d-block w-100  img-fluid" alt="...">
-                </div>
+                <a href="user_check_out.php"><button id="check_out" class="py-3 p-2 rounded">Check Out (00)</button></a>
             </div>
         </div>
-    </div>
-
-    <div class="container-fluid">
-        <h3 class="pt-4 ps-4">Hot Products</h3>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 m-1 mt-4 mb-4">
-            <?php 
-            $res = mysqli_query($conn, "SELECT * FROM products");
-            while($row = mysqli_fetch_assoc($res)){
-        ?>
-            <div class="col">
-                <div class="card w-100">
-                    <img src="product-images/<?php echo $row['image_file']?>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title"><?php echo $row['product_name']?></h5>
-                        <p class="card-text">
-                        <p>Php <?php echo $row['price']?>.00</p>
-                        </p>
-                        <a href="user_product_preview.php?id=<?php echo $row['id']; ?>" class="btn btn-primary">View
-                            Product</a>
+        <!-- <a href="#"> -->
+        <div class="cart_item">
+            <div id="product_details">
+                <div class="check_box">
+                    <input type="checkbox">
+                </div>
+                <div class="product_image ">
+                    <img src="img\homepic1.jpg" alt="">
+                </div>
+                <div class="product_description">
+                    <h5>Product asd asdasd</h5>
+                    <div class="product_variation">
+                        <p>variation x 00</p>
                     </div>
                 </div>
             </div>
-            <?php }?>
+            <div class="edit_button">
+
+                <a href="user_product_preview.php"><button>Edit</button></a>
+            </div>
         </div>
+        <!-- </a> -->
+        <div id="empty_cart" class="container rounded p-2">
+            <h5>Your cart is Empty. Order <a href="user_products.php">here.</a></h5>
+        </div>
+
+
     </div>
 
     <footer>
@@ -381,7 +358,6 @@
             </div>
         </div>
     </footer>
-
 </body>
 
 </html>
