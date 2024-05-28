@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light m-0 p-0">
         <div
             class="container-fluid ms-0 ms-md-3 d-flex align-items-center justify-content-space justify-content-md-between d-lg-none">
@@ -40,7 +39,7 @@
                             <div class="user">
 
                                 <div class="name">
-                                    <p><?php echo $_SESSION['username'] ?></p>
+                                    <p>A - <?php echo $_SESSION['username'] ?></p>
                                 </div>
 
                                 <div class="photo">
@@ -188,7 +187,7 @@
                         <div class="user">
 
                             <div class="name">
-                                <p><?php echo $_SESSION['username'] ?></p>
+                                <p>A - <?php echo $_SESSION['username'] ?></p>
                             </div>
 
                             <div class="photo">

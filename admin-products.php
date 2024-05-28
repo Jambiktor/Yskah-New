@@ -38,7 +38,7 @@
                             <div class="user">
 
                                 <div class="name">
-                                    <p><?php echo $_SESSION['username'] ?></p>
+                                    <p>A - <?php echo $_SESSION['username'] ?></p>
                                 </div>
 
                                 <div class="photo">
@@ -186,7 +186,7 @@
                         <div class="user">
 
                             <div class="name">
-                                <p><?php echo $_SESSION['username'] ?></p>
+                                <p>A - <?php echo $_SESSION['username'] ?></p>
                             </div>
 
                             <div class="photo">
