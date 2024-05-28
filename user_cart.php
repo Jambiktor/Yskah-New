@@ -290,7 +290,6 @@
         </div>
     </nav>
 
-
     <div id="container" class="container-fluid-sm container-md d-flex flex-column mb-3 mt-3 p-3">
         <?php if (!empty($_SESSION['cart'])): ?>
         <?php 

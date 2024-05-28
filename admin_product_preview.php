@@ -321,9 +321,7 @@
                         <h3>Php <?php echo $row['price']?>.00</h3>
                     </div>
                     <div class="product_description w-100 h-auto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia velit est commodi architecto
-                        labore natus perspiciatis hic iure odio ut! Quos maiores vero laudantium ex, quasi repellat cum
-                        voluptatum veritatis.
+                        <h5><?php echo $row['description']?></h5>
                     </div>
                     <div class="variation_ordernow d-flex flex-column w-100">
                         <div

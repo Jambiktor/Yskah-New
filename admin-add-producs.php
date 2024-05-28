@@ -4,6 +4,7 @@ include("connection.php");
 if(isset($_POST['submit'])) {
     $product_name = $_POST['product_name'];
     $price = $_POST['price'];
+    $description = $_POST['description'];
     
     if($_FILES['image_file']['error'] === 4){
         echo "<script>alert('Image does not exist.');
@@ -32,7 +33,7 @@ if(isset($_POST['submit'])) {
             $newImageName .= '.' . $imageExtension;
 
             move_uploaded_file($tmpname, 'product-images/'. $newImageName); // Fixed typo $tempname to $tmpname
-            $query = "INSERT INTO products (product_name, image_file, price) VALUES ('$product_name', '$newImageName', '$price')"; // Fixed SQL query syntax
+            $query = "INSERT INTO products (product_name, image_file, price, description) VALUES ('$product_name', '$newImageName', '$price', '$description')"; // Fixed SQL query syntax
             mysqli_query($conn, $query);
             
             echo "<script>
