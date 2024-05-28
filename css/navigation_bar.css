@@ -46,6 +46,22 @@ body > nav > div {
   display: flex;
 }
 
+#offcanvasExampleLabel > div > button {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  padding: 0;
+  margin-top: 5px;
+  box-shadow: none;
+  border-radius: 20px;
+  outline: rgb(255, 255, 255);
+  height: 65px;
+  width: 180px;
+}
+
+#offcanvasExampleLabel > div > button:focus {
+  box-shadow: none;
+}
+
 body > nav > div > div.right_nav > div.btn-group > button {
   background: transparent;
   margin-right: 0;
@@ -77,6 +93,57 @@ body > nav > div > div.right_nav > button:focus {
   border-bottom: 2px solid black;
 }
 
+/* offcanvas user */
+.user-off {
+  height: 55px;
+  width: 180px;
+  background: var(--main_color);
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  border-radius: 20px;
+  padding-right: 20px;
+  transition: 0.2s;
+}
+
+.user-off:hover {
+  background: var(--sec_color);
+}
+
+.user-off .photo {
+  height: 45px;
+  width: 45px;
+  background: url(img\User.jpg);
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.user-off .photo img {
+  height: 45px;
+  width: 45px;
+}
+
+.user-off .name {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 0;
+  height: 45px;
+  width: 50px;
+  margin-right: 15px;
+}
+
+.user-off .name p {
+  font-size: 17px;
+  margin: 0;
+  color: black;
+  text-align: right;
+}
+
+/* nav user */
 .user {
   height: 55px;
   width: 180px;
@@ -122,6 +189,7 @@ body > nav > div > div.right_nav > button:focus {
 
 .user .name p {
   font-size: 17px;
+
   margin: 0;
   color: black;
   text-align: right;
@@ -142,19 +210,17 @@ body > div.navi-bar > div > div.right_nav > div.btn-group > button {
 .dropdown-menu {
   right: 0;
   padding: 15px;
-  height: 150px;
   width: 180px;
 }
 
 .dropdown-menu .drop_items {
   padding-right: 5px;
   display: flex;
-  justify-content: end;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 40px;
   margin-bottom: 5px;
-  border-bottom: 1px solid gray;
 }
 
 .dropdown-menu a {

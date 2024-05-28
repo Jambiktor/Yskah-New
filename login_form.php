@@ -1,6 +1,8 @@
 <?php
-include("head.php");
+    include("connection.php");
+    include("head.php");
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +10,7 @@ include("head.php");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yskah Creation - Home</title>
-    <link rel="stylesheet" href="css\login1.css" />
+    <link rel="stylesheet" href="css\loginform.css" />
 </head>
 
 <body>
