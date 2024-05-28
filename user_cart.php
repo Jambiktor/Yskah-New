@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css\admin_product_preview1.css" />
+    <link rel="stylesheet" href="css\cart.css" />
 </head>
 
 <body>
@@ -144,10 +144,13 @@
             <div class="offcanvas-body">
                 <ul class="navbar-nav nav-fill gap-2 p-0">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="user_landing_page.php">Home</a>
+                        <a class="nav-link text-dark " href=" user_landing_page.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark active" aria-current="page" href="user_products.php">Product</a>
+                        <a class="nav-link text-dark" href="user_products.php">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark  active" aria-current="page" href="user_cart.php">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
@@ -169,8 +172,10 @@
                         <a class="nav-link text-dark" href="user_landing_page.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark active" aria-current="page"
-                            href="user_landing_page.php">Product</a>
+                        <a class="nav-link text-dark" href="user_products.php">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark active" aria-current="page" href="user_cart.php">Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-dark" href="#">About Us</a>
@@ -285,106 +290,78 @@
         </div>
     </nav>
 
-    <?php
-        if (isset($_GET['id'])) {
-        $product_id = intval($_GET['id']);
 
-        $result = mysqli_query($conn, "SELECT * FROM products WHERE id = $product_id");
-        $row = mysqli_fetch_assoc($result);
-
-        if ($row) {
-    ?>
-
-    <div id="container" class="container-fluid d-flex mb-3 mt-3">
-        <div class="row row-cols-1 row-cols-md-2 gx-1 gy-4 gy-md-0">
-            <div class="col">
-                <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-interval="false">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="product-images/<?php echo $row['image_file']?>" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="product-images/<?php echo $row['image_file']?>" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="product-images/<?php echo $row['image_file']?>" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                </div>
+    <div id="container" class="container-fluid-sm container-md d-flex flex-column mb-3 mt-3 p-3">
+        <?php if (!empty($_SESSION['cart'])): ?>
+        <?php 
+                $totalPrice = 0;
+                foreach ($_SESSION['cart'] as $item) {
+                    $totalPrice += $item['price'] * $item['quantity'];
+                }
+            ?>
+        <div id="select_all" class="container rounded p-2 mb-2 ps-2 d-flex justify-content-between align-items-center">
+            <div class="d-flex justify-content-between align-items-center ps-2">
+                <input type="checkbox" id="selectAllCheckbox">
+                <p class="ms-2 mt-3">Select All</p>
             </div>
-
-            <div class="col">
-                <div class="container-fluid">
-                    <div class="product_name_price d-flex justify-content-between p-3 align-items-center">
-                        <h1><?php echo $row['product_name']?></h1>
-                        <h3>Php <?php echo $row['price']?>.00</h3>
-                    </div>
-                    <div class="product_description w-100 h-auto">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia velit est commodi architecto
-                        labore natus perspiciatis hic iure odio ut! Quos maiores vero laudantium ex, quasi repellat cum
-                        voluptatum veritatis.
-                    </div>
-                    <div class="variation_ordernow d-flex flex-column w-100">
-                        <div
-                            class="product_variation w-100 d-flex align-items-center flex-wrap justify-content-center justify-content-md-start gap-2 mt-md-5">
-                            <div class="variation">
-                                <button type="button" class="btn variation-btn">Variation 1</button>
-                            </div>
-                            <div class="variation">
-                                <button type="button" class="btn variation-btn">Variation 2</button>
-                            </div>
-                            <div class="variation">
-                                <button type="button" class="btn variation-btn">Variation 3</button>
-                            </div>
-                        </div>
-                        <div
-                            class="product_ordernow_addtocart d-flex align-items-center justify-content-md-start justify-content-center gap-3">
-                            <div class="add_to_cart">
-
-                                <form id="add-to-cart-form" action="add-to-cart-form.php" method="POST" class="">
-                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                    <input type="hidden" name="product_name"
-                                        value="<?php echo $row['product_name']; ?>">
-                                    <input type="hidden" name="price" value="<?php echo $row['price']; ?>">
-                                    <input type="hidden" name="image_file" value="<?php echo $row['image_file']; ?>">
-                                    <div class="quantity">
-                                        <label for="quantity">Quantity:</label>
-                                        <input type="number" id="quantity" name="quantity" value="1" min="1">
-                                    </div>
-                                    <button class="btn"
-                                        onclick="document.getElementById('add-to-cart-form').submit();">Add to
-                                        Cart</button>
-                                </form>
-                            </div>
-                            <div class="order_now">
-                                <h4>Order Now</h4>
-                            </div>
-                        </div>
-                    </div>
+            <div class="d-flex align-items-center">
+                <div class="me-3 d-flex flex-column align-items-end justify-content-start">
+                    <p class="m-0">Total</p>
+                    <h5 id="price" class="m-0">₱ <?php echo $totalPrice; ?>.00</h5>
                 </div>
+                <a href="user_check_out.php"><button id="check_out" class="py-3 p-2 rounded">Check Out
+                        (<?php echo count($_SESSION['cart']); ?>)</button></a>
             </div>
-
         </div>
+        <?php foreach ($_SESSION['cart'] as $index => $item): ?>
+        <div class="cart_item">
+            <div id="product_details">
+                <div class="check_box">
+                    <input type="checkbox" class="itemCheckbox" data-index="<?php echo $index; ?>">
+                </div>
+                <div class="product_image">
+                    <img src="product-images/<?php echo $item['image_file']; ?>" alt="Product Image">
+                </div>
+                <div class="product_description">
+                    <h5><?php echo $item['product_name']; ?></h5>
+                    <div class="product_variation">
+                        <p>Price: ₱ <?php echo $item['price']; ?>.00</p>
+                        <p>Quantity: <?php echo $item['quantity']; ?></p>
+                        <p>Total: ₱ <?php echo $item['price'] * $item['quantity']; ?>.00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="edit_button">
+                <a href="edit-cart-item.php?index=<?php echo $index; ?>"><button>Edit</button></a>
+            </div>
+            <div class="delete_button">
+                <form action="delete-from-cart.php" method="post">
+                    <input type="hidden" name="index" value="<?php echo $index; ?>">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        </div>
+        <?php endforeach; ?>
+        <?php else: ?>
+        <div id="empty_cart" class="container rounded p-2">
+            <h5>Your cart is Empty. Order <a href="user_products.php">here</a>.</h5>
+        </div>
+        <?php endif; ?>
     </div>
 
     <script>
-    document.querySelectorAll('.variation-btn').forEach((button, index) => {
-        button.addEventListener('click', function() {
-            const carousel = document.querySelector('#carouselExampleInterval');
-            const bootstrapCarousel = new bootstrap.Carousel(carousel);
-            bootstrapCarousel.to(index + 1);
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const selectAllCheckbox = document.getElementById("selectAllCheckbox");
+        const itemCheckboxes = document.querySelectorAll(".itemCheckbox");
+
+        selectAllCheckbox.addEventListener("click", function() {
+            itemCheckboxes.forEach(function(checkbox) {
+                checkbox.checked = selectAllCheckbox.checked;
+            });
         });
     });
     </script>
-
-    <?php
-        } else {
-            echo "<p>Product not found.</p>";
-        }
-    } else {
-        echo "<p>No product selected.</p>";
-    }
-    ?>
 
     <footer>
         <div class="footer_content flex-wrap flex-md-nowrap">

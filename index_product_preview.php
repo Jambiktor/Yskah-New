@@ -149,7 +149,7 @@
                         <div
                             class="product_ordernow_addtocart d-flex align-items-center justify-content-md-start justify-content-center gap-3">
                             <div class="add_to_cart">
-                                <h4>Add to Cart</h4>
+                                <h4 class="btn">Add to Cart</h4>
                             </div>
                             <div class="order_now">
                                 <h4>Order Now</h4>
